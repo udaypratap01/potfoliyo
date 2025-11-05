@@ -47,7 +47,7 @@ const About = () => {
           </p>
           {/* Resume Button */}
           <a
-            href="https://drive.google.com/file/d/114PmViYDPPT4oxeJJrnZ8h3QFDx5NNHT/view?usp=sharing"
+            href="https://melodious-semolina-76eb87.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
