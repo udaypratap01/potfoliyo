@@ -37,7 +37,7 @@ import vpsLogo from './assets/education_logo/vps_logo.png';
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/github_det.png';
 // NOTE: cs_prep image is served from public to avoid bundler resolve issues
-const csprepLogo = "/assets/work_logo/cs_prep.png";
+import  csprepLogo from './assets/work_logo/cs_prep.png'
 import movierecLogo from './assets/work_logo/movie_rec.jpg';
 
 export const SkillsInfo = [

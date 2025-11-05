@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
 
+// Helper: public path ko BASE_URL ke saath safe banाओ
+const resolveSrc = (src) => {
+  if (!src) return "";
+  if (/^https?:\/\//i.test(src)) return src; // already absolute
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/+$/, "");
+  const rel  = src.startsWith("/") ? src : `/${src}`;
+  return `${base}${rel}`;
+};
+
+// Optional placeholder (public me rakh lo: public/assets/placeholder.png)
+const FALLBACK = resolveSrc("/assets/placeholder.png");
+
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const handleOpenModal = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
+  const handleOpenModal = (project) => setSelectedProject(project);
+  const handleCloseModal = () => setSelectedProject(null);
 
   return (
     <section
@@ -37,8 +44,16 @@ const Work = () => {
           >
             <div className="p-4">
               <img
-                src={project.image}
+                src={resolveSrc(project.image)}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  e.currentTarget.src = FALLBACK;
+                  e.currentTarget.onerror = null;
+                  // Debug ke liye console me log (deploy console me dikhega)
+                  console.warn("Image failed:", project.image);
+                }}
                 className="w-full h-48 object-cover rounded-xl"
               />
             </div>
@@ -64,7 +79,7 @@ const Work = () => {
         ))}
       </div>
 
-      {/* Modal Container */}
+      {/* Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
           <div className="bg-gray-900 rounded-xl shadow-2xl lg:w-full w-[90%] max-w-3xl overflow-hidden relative">
@@ -80,8 +95,15 @@ const Work = () => {
             <div className="flex flex-col">
               <div className="w-full flex justify-center bg-gray-900 px-4">
                 <img
-                  src={selectedProject.image}
+                  src={resolveSrc(selectedProject.image)}
                   alt={selectedProject.title}
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.src = FALLBACK;
+                    e.currentTarget.onerror = null;
+                    console.warn("Modal image failed:", selectedProject.image);
+                  }}
                   className="lg:w-full w-[95%] object-contain rounded-xl shadow-2xl"
                 />
               </div>
