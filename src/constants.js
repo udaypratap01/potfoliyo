@@ -25,24 +25,20 @@ import gitLogo from './assets/tech_logo/git.png';
 import githubLogo from './assets/tech_logo/github.png';
 import vscodeLogo from './assets/tech_logo/vscode.png';
 
-
 import figmaLogo from './assets/tech_logo/figma.png';
 import netlifyLogo from './assets/tech_logo/netlify.png';
 
 import postgreLogo from './assets/tech_logo/postgre.png';
 
-
 // Education Section Logo's
-
 import bsaLogo from './assets/education_logo/bsa_logo.png';
 import vpsLogo from './assets/education_logo/vps_logo.png';
 
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/github_det.png';
-import csprepLogo from './assets/work_logo/cs_prep.JPG';
+// NOTE: cs_prep.JPG removed / missing; using placeholder until correct file is added.
+// import csprepLogo from './assets/work_logo/cs_prep.JPG';
 import movierecLogo from './assets/work_logo/movie_rec.jpg';
-
-
 
 export const SkillsInfo = [
   {
@@ -72,11 +68,9 @@ export const SkillsInfo = [
   {
     title: 'Languages',
     skills: [
-    
       { name: 'Java', logo: javaLogo },
       { name: 'Python', logo: pythonLogo },
       { name: 'JavaScript', logo: javascriptLogo },
-      
     ],
   },
   {
@@ -92,7 +86,6 @@ export const SkillsInfo = [
 ];
 
 export const education = [
-  
   {
     id: 1,
     img: bsaLogo,
@@ -137,7 +130,8 @@ export const projects = [
     title: "face recognition attendance system",
     description:
       "A smart attendance system using facial recognition to automate tracking, prevent proxy attendance, and reduce manual errors—ideal for schools, offices, and organizations.",
-    image: csprepLogo,
+    // image: csprepLogo, // removed: missing asset
+    image: githubdetLogo, // TEMP placeholder to fix build
     tags: ["Python", "OpenCV", "NumPy", "face_recognition", "MySQL"],
     github: "https://github.com/udaypratap01/face-recognition-attendance-system",
     webapp: "https://melodious-semolina-76eb87.netlify.app/",
@@ -152,5 +146,4 @@ export const projects = [
     github: "https://melodious-semolina-76eb87.netlify.app/",
     webapp: "https://melodious-semolina-76eb87.netlify.app/",
   },
-  
 ];
