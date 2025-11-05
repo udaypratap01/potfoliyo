@@ -37,7 +37,8 @@ import vpsLogo from './assets/education_logo/vps_logo.png';
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/github_det.png';
 // NOTE: cs_prep.JPG removed / missing; using placeholder until correct file is added.
-import img from "./assets/work_logo/cs_prep.png";
+import csprepLogo from "./assets/work_logo/cs_prep.png";
+
 
 import movierecLogo from './assets/work_logo/movie_rec.jpg';
 
@@ -127,15 +128,17 @@ export const projects = [
     webapp: "https://melodious-semolina-76eb87.netlify.app/",
   },
   {
-    id: 1,
-    title: "face recognition attendance system",
-    description:
-      "A smart attendance system using facial recognition to automate tracking, prevent proxy attendance, and reduce manual errors—ideal for schools, offices, and organizations.",
-    // image: img, // removed: missing asset
-    image: img, // TEMP placeholder to fix build
-    tags: ["Python", "OpenCV", "NumPy", "face_recognition", "MySQL"],
-    github: "https://github.com/udaypratap01/face-recognition-attendance-system",
-    webapp: "https://melodious-semolina-76eb87.netlify.app/",
+    
+  id: 1,
+  title: "face recognition attendance system",
+  description:
+    "A smart attendance system using facial recognition to automate tracking, prevent proxy attendance, and reduce manual errors—ideal for schools, offices, and organizations.",
+  image: csprepLogo,
+  tags: ["Python", "OpenCV", "NumPy", "face_recognition", "MySQL"],
+  github: "https://github.com/udaypratap01/face-recognition-attendance-system",
+  webapp: "https://melodious-semolina-76eb87.netlify.app/",
+
+
   },
   {
     id: 2,
