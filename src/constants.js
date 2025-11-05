@@ -37,7 +37,7 @@ import vpsLogo from './assets/education_logo/vps_logo.png';
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/github_det.png';
 // NOTE: cs_prep.JPG removed / missing; using placeholder until correct file is added.
-import csprepLogo from './assets/work_logo/cs_prep.JPG';
+import csprepLogo from './assets/work_logo/cs_prep.png';
 import movierecLogo from './assets/work_logo/movie_rec.jpg';
 
 export const SkillsInfo = [
